@@ -1,7 +1,7 @@
 # btcbit-homework
 
 [![build](https://github.com/ximtech/btcbit-homework/actions/workflows/build.yml/badge.svg)](https://github.com/ximtech/btcbit-homework/actions/workflows/build.yml)
-[![Static Badge](https://img.shields.io/badge/Download_JAR-link-blue)](https://file.io/cJEs37WsXZfz)
+[![Static Badge](https://img.shields.io/badge/Download_JAR-link-blue)](https://file.io/bD90KHgLl6U7)
 
 ### Prerequisites
 
