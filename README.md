@@ -1,7 +1,8 @@
 # btcbit-homework
 
 [![build](https://github.com/ximtech/btcbit-homework/actions/workflows/build.yml/badge.svg)](https://github.com/ximtech/btcbit-homework/actions/workflows/build.yml)
-[![Static Badge](https://img.shields.io/badge/Download_JAR-link-blue)](https://file.io/bD90KHgLl6U7)
+[![Static Badge](https://img.shields.io/badge/Download_JAR-link-blue)](https://file.io/cJEs37WsXZfz)
+[![codecov](https://codecov.io/gh/ximtech/btcbit-homework/graph/badge.svg?token=tVjYuin2QA)](https://codecov.io/gh/ximtech/btcbit-homework)
 
 ### Prerequisites
 
@@ -9,7 +10,7 @@
 
 ### Task requirements:
 
-- Your project should be built with Gradle, with the opportunity to create an executable .jar.
+- Your project should be built with `Gradle`, with the opportunity to create an executable `.jar`.
 - Your program should take three parameters which are passed in the command line:
     - `inputFile` - path to the input file, relative to the executable file directory. This will be an incoming JSON file with a collection of notes
     - `semitone` - a number of semitones to transpose to (can be negative)
@@ -58,4 +59,19 @@
   5],[1,10],[1,6],[1,10],[1,3],[1,10],[1,8],[1,10],[1,5],[1,10],[1,6],[1,10],[1,3],[1,10],[1,5],[1,10],[1,2]
   ,[1,10],[1,3]]
 ```
+
+### Run example
+
+- Download jar by provided link
+- Navigate to downloaded `jar` location
+- Create `in.json` file, then copy content from `Sample input` section
+- Open terminal and run command
+```text
+    java -jar task-1.0.0.jar in.json -3 out.json
+```
+
+### Notes
+
+Project should build and pull all dependencies automatically. If error happens, make sure that `IDE` build tool configured correctly:<br/>
+![<img width="200" height="200"/>](assets/build-troubleshooting.png)
 
