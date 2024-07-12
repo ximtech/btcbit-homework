@@ -35,7 +35,7 @@ jobs:
     - name: Output JAR Download URL
       id: jar_info
       run: |
-        output = "${{ fromJson(steps.upload.outputs.output) }}"
+        $output = "${{ fromJson(steps.upload.outputs.output) }}"
         echo "download_link=$($output.data.link)" >> $GITHUB_OUTPUT
       
     - name: Build Download Badge
