@@ -24,7 +24,7 @@ jobs:
     - name: Build And Run Tests
       run: gradle clean build --info --stacktrace
       
-    - name: Upload JAR to file store
+    - name: Upload JAR to File Store
       id: upload
       uses: JantHsueh/upload-file-action@master
       with:
@@ -32,10 +32,10 @@ jobs:
         forms: '{"Authorization":"Bearer ${{ secrets.FILE_IO_API_KEY }}"}'
         fileForms: '{"file":"build/libs/task-1.0.0.jar"}'
         
-    - name: Output JAR download URL
+    - name: Output JAR Download URL
       id: jar_info
       run: |
-        $output = '${{ steps.upload.outputs.output }}' | ConvertFrom-Json
+        output = "${{ fromJson(steps.upload.outputs.output) }}"
         echo "download_link=$($output.data.link)" >> $GITHUB_OUTPUT
       
     - name: Build Download Badge
@@ -46,7 +46,7 @@ jobs:
         label: Download
         message: ${{ steps.jar_info.outputs.download_link }}
 
-    - name: Upload coverage reports to Codecov
+    - name: Upload Coverage Reports To Codecov
       uses: codecov/codecov-action@v4.0.1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}

@@ -2,6 +2,8 @@
 
 [![build](https://github.com/ximtech/btcbit-homework/actions/workflows/build.yml/badge.svg)](https://github.com/ximtech/btcbit-homework/actions/workflows/build.yml)
 
+- Link: ${{ steps.jar_info.outputs.download_link }}
+
 ### Prerequisites
 
 - `JDK 21`
