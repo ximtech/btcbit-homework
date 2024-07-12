@@ -39,7 +39,7 @@ jobs:
 
     - name: Update README.md
       run: |
-        sed -i -E '1 s#https://file.io/.{12}#${{ steps.jar_info.outputs.download_link }}#' README.md
+        sed -i -E 's#https://file.io/.{12}#${{ steps.jar_info.outputs.download_link }}#' README.md
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config user.name "github-actions[bot]"
         git commit -am "Automated report"
