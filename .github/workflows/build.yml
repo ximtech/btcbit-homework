@@ -38,12 +38,12 @@ jobs:
         echo "download_link=${{ fromJson(steps.upload.outputs.output).data.link }}" >> $GITHUB_OUTPUT
 
     - name: Update README.md
-        run: |
-          sed -i '0, s/jar_download_link/'${{ steps.jar_info.outputs.download_link }}'/' README.md
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          git commit -am "Automated report"
-          git push
+      run: |
+        sed -i '0, s/jar_download_link/'${{ steps.jar_info.outputs.download_link }}'/' README.md
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config user.name "github-actions[bot]"
+        git commit -am "Automated report"
+        git push
       
     - name: Build Download Badge
       uses: peterrhodesdev/build-a-badge@v1.3.1
