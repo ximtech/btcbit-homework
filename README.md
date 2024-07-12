@@ -1,5 +1,7 @@
 # btcbit-homework
 
+[![build](https://github.com/ximtech/btcbit-homework/actions/workflows/build.yml/badge.svg)](https://github.com/ximtech/btcbit-homework/actions/workflows/build.yml)
+
 ### Prerequisites
 
 - `JDK 21`

@@ -23,6 +23,13 @@ jobs:
 
     - name: Build And Run Tests
       run: gradle clean build --info --stacktrace
+      
+    - name: Upload JAR to file store
+      uses: JantHsueh/upload-file-action@master
+      with:
+        url: https://file.io
+        forms: '{"Authorization":"${{ secrets.FILE_IO_API_KEY }}"}'
+        fileForms: '{"file":"build/libs/task-1.0.0.jar"}'
 
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v4.0.1
