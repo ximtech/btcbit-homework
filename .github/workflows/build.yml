@@ -25,21 +25,27 @@ jobs:
       run: gradle clean build --info --stacktrace
       
     - name: Upload JAR to file store
+      id: upload
       uses: JantHsueh/upload-file-action@master
       with:
         url: https://file.io
         forms: '{"Authorization":"Bearer ${{ secrets.FILE_IO_API_KEY }}"}'
         fileForms: '{"file":"build/libs/task-1.0.0.jar"}'
         
-    - name: Update JAR Download Badge
-      uses: schneegans/dynamic-badges-action@v1.7.0
+    - name: Output JAR download URL
+      id: jar_info
+      run: |
+        $output = '${{ steps.upload.outputs.output }}' | ConvertFrom-Json
+        echo "download_link=$($output.data.link)" >> $GITHUB_OUTPUT
+      shell: bash
+      
+    - name: Build Download Badge
+      uses: peterrhodesdev/build-a-badge@v1.3.1
       with:
-        auth: ${{ secrets.GIST_BADGE_SECRET }}
-        gistID: 8f6459c2417de7534f64d98360dde867
-        filename: test.json
-        label: Hello
-        message: World
-        color: orange
+        token: ${{ secrets.GITHUB_TOKEN }}
+        filename: my-badge
+        label: Download
+        message: ${{ steps.jar_info.outputs.download_link }}
 
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v4.0.1
