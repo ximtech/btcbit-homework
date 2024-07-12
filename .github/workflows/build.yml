@@ -39,20 +39,12 @@ jobs:
 
     - name: Update README.md
       run: |
-        sed -i 's#jar_download_link#${{ steps.jar_info.outputs.download_link }}#' README.md
+        sed -i 's#{{jar_download_link}}#${{ steps.jar_info.outputs.download_link }}#' README.md
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config user.name "github-actions[bot]"
         git commit -am "Automated report"
         git push
       
-    - name: Build Download Badge
-      uses: peterrhodesdev/build-a-badge@v1.3.1
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        filename: my-badge
-        label: Download
-        message: ${{ steps.jar_info.outputs.download_link }}
-
     - name: Upload Coverage Reports To Codecov
       uses: codecov/codecov-action@v4.0.1
       with:
