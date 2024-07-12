@@ -37,7 +37,6 @@ jobs:
       run: |
         $output = '${{ steps.upload.outputs.output }}' | ConvertFrom-Json
         echo "download_link=$($output.data.link)" >> $GITHUB_OUTPUT
-      shell: bash
       
     - name: Build Download Badge
       uses: peterrhodesdev/build-a-badge@v1.3.1
