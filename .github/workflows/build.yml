@@ -28,7 +28,7 @@ jobs:
       uses: JantHsueh/upload-file-action@master
       with:
         url: https://file.io
-        forms: '{"Authorization":"${{ secrets.FILE_IO_API_KEY }}"}'
+        forms: '{"Authorization":"Bearer ${{ secrets.FILE_IO_API_KEY }}"}'
         fileForms: '{"file":"build/libs/task-1.0.0.jar"}'
 
     - name: Upload coverage reports to Codecov

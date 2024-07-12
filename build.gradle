@@ -39,7 +39,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.34'
 
     // Testing, Spock, Groovy
-    testImplementation "org.codehaus.groovy:groovy-all:3.0.13"
+    testImplementation "org.codehaus.groovy:groovy-all:3.0.20"
     testImplementation "org.spockframework:spock-core:2.3-groovy-3.0"
     configurations.implementation.extendsFrom(configurations.includeLibrary)
 }
