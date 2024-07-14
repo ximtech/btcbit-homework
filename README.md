@@ -1,7 +1,7 @@
 # btcbit-homework
 
 [![build](https://github.com/ximtech/btcbit-homework/actions/workflows/build.yml/badge.svg)](https://github.com/ximtech/btcbit-homework/actions/workflows/build.yml)
-[![Static Badge](https://img.shields.io/badge/Download_JAR-link-blue)](https://file.io/pnsO4BMQS608)
+[![Static Badge](https://img.shields.io/badge/Download_JAR-link-blue)](https://file.io/PByjfhNEfmX8)
 [![codecov](https://codecov.io/gh/ximtech/btcbit-homework/graph/badge.svg?token=tVjYuin2QA)](https://codecov.io/gh/ximtech/btcbit-homework)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/7ac3365a0de14775a13459e37316f8cf)](https://app.codacy.com/gh/ximtech/btcbit-homework/dashboard)
 
