@@ -24,7 +24,7 @@ jobs:
     - name: Build And Run Tests
       run: gradle clean build --info --stacktrace
       
-    - name: Upload JAR to File Store
+    - name: Upload JAR In File Store
       id: upload
       uses: JantHsueh/upload-file-action@master
       with:
