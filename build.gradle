@@ -41,6 +41,7 @@ dependencies {
     // Testing, Spock, Groovy
     testImplementation "org.codehaus.groovy:groovy-all:3.0.20"
     testImplementation "org.spockframework:spock-core:2.3-groovy-3.0"
+    testImplementation "net.bytebuddy:byte-buddy:1.9.3"
     configurations.implementation.extendsFrom(configurations.includeLibrary)
 }
 

@@ -3,6 +3,7 @@
 [![build](https://github.com/ximtech/btcbit-homework/actions/workflows/build.yml/badge.svg)](https://github.com/ximtech/btcbit-homework/actions/workflows/build.yml)
 [![Static Badge](https://img.shields.io/badge/Download_JAR-link-blue)](https://file.io/cJEs37WsXZfz)
 [![codecov](https://codecov.io/gh/ximtech/btcbit-homework/graph/badge.svg?token=tVjYuin2QA)](https://codecov.io/gh/ximtech/btcbit-homework)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7ac3365a0de14775a13459e37316f8cf)](https://app.codacy.com/gh/ximtech/btcbit-homework/dashboard)
 
 ### Prerequisites
 
@@ -14,9 +15,8 @@
 - Your program should take three parameters which are passed in the command line:
     - `inputFile` - path to the input file, relative to the executable file directory. This will be an incoming JSON file with a collection of notes
     - `semitone` - a number of semitones to transpose to (can be negative)
-    - `outputFile` - path to the output file, relative to the executable file directory. This
-   will be an outgoing JSON file with a collection of result notes.
-   Example: java -jar task.jar in/a.json 5 out/b.json
+    - `outputFile` - path to the output file, relative to the executable file directory. This will be an outgoing JSON file with a collection of result notes.
+   ***Example:*** `java -jar task.jar in/a.json 5 out/b.json`
 - As a result of execution, your `.jar` file should create a file containing the output data
   with the transposed collection of notes.
 - If at least one of the input or resulting notes falls out of the keyboard range, your
@@ -39,7 +39,7 @@
   We skip the duration of a particular note for simplicity.
   Let’s define a musical piece as a collection of notes (e.g. `[[2, 1], [1, 10], [1, 5]]`).
   The piano keyboard has 7 full octaves `(-2, -1, 0, 1, 2, 3, 4)` and 2 partial ones `(-3 and 5)`. The
-  first note is `[- 3, 10]`, the last one is `[5, 1]`.
+  first note is `[-3, 10]`, the last one is `[5, 1]`.
 
 ### Sample input:
 ```json

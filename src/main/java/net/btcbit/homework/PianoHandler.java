@@ -25,7 +25,7 @@ public class PianoHandler {
     final FileLocationService fileLocationService;
     final PianoTransposerService pianoTransposerService;
     
-    public void executePianoTransposer(AppParameters parameters) throws IOException {
+    public File executePianoTransposer(AppParameters parameters) throws IOException {
         File currentLocationDir = fileLocationService.getCurrentDir();
         File inputJsonFile = new File(currentLocationDir, parameters.inputJsonFileName());
         log.info("Input json file path: {}", inputJsonFile);
@@ -33,11 +33,12 @@ public class PianoHandler {
             throw new PianoTransposerException("Input JSON file: [%s] do not exist".formatted(inputJsonFile.getName()));
         }
 
-        List<PianoEntry> inputEntries = objectMapper.readValue(inputJsonFile, new TypeReference<>() {});
+        List<PianoEntry> inputEntries = objectMapper.readValue(inputJsonFile, new TypeReference<>(){});
         log.info("Total piano entries count to transpose: {}", inputEntries.size());
         List<PianoEntry> transposedEntries = pianoTransposerService.transposePiece(inputEntries, parameters.interval());
         File outputJsonFile = new File(currentLocationDir, parameters.outputJsonFileName());
         log.info("Output json file path: {}", outputJsonFile);
         FileUtils.write(outputJsonFile, objectMapper.writeValueAsString(transposedEntries), Charset.defaultCharset());
+        return outputJsonFile;
     }
 }

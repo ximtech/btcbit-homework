@@ -9,11 +9,11 @@ import java.util.stream.Collectors;
 
 public class PianoTransposerService {
 
-    private static final int MIN_OCTAVE = -3;
-    private static final int MAX_OCTAVE = 5;
-    private static final int NOTES_PER_OCTAVE = 12;
-    private static final int MIN_NOTE_NUMBER = 0;
-    private static final int MAX_NOTE_NUMBER = 11;
+    public static final int MIN_OCTAVE = -3;
+    public static final int MAX_OCTAVE = 5;
+    public static final int NOTES_PER_OCTAVE = 12;
+    public static final int MIN_NOTE_NUMBER = 0;
+    public static final int MAX_NOTE_NUMBER = 11;
 
     public PianoEntry transposeNote(PianoEntry entry, int interval) {
         if (entry.octave() < MIN_OCTAVE || entry.octave() > MAX_OCTAVE) {
