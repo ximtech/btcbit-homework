@@ -18,11 +18,7 @@ class PianoHandlerSpec extends Specification {
     PianoTransposerService pianoTransposerService = Spy()
     ObjectMapper objectMapper = new ObjectMapper()
     
-    PianoHandler pianoHandler
-
-    void setup() {
-        pianoHandler = new PianoHandler(objectMapper, fileLocationService, pianoTransposerService)
-    }
+    PianoHandler pianoHandler = new PianoHandler(objectMapper, fileLocationService, pianoTransposerService)
 
     def 'test executePianoTransposer() - happy path'() {
         given:

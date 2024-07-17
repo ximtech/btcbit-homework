@@ -38,7 +38,6 @@ public class PianoTransposerService {
         if (newOctave < MIN_OCTAVE || newOctave > MAX_OCTAVE) {
             throw new PianoTransposerException("Transposed note is out of the piano's range");
         }
-
         return new PianoEntry(newOctave, newNoteNumber);
     }
 
