@@ -29,8 +29,8 @@ class PianoHandlerSpec extends Specification {
         def outputJsonFile = pianoHandler.executePianoTransposer(appParams)
         
         then:
-        List<PianoEntry> inputList = objectMapper.readValue(outputJsonFile, new TypeReference<List<PianoEntry>>(){})
-        List<PianoEntry> outputList = objectMapper.readValue(testOutJsonFile, new TypeReference<List<PianoEntry>>(){})
+        def inputList = objectMapper.readValue(outputJsonFile, new TypeReference<List<PianoEntry>>(){})
+        def outputList = objectMapper.readValue(testOutJsonFile, new TypeReference<List<PianoEntry>>(){})
         inputList.size() == 82
         inputList == outputList
         
